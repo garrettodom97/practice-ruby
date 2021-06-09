@@ -15,38 +15,47 @@ while index < items.length
 end
 
 class Items
+  attr_reader :type, :color, :price
+  attr_writer :type, :color, :price
+
   def initialize(type, color, price)
     @type = type
     @color = color
     @price = price
   end
 
-  def type(*args)
-    if args.length > 0
-      @type = args[0]
-    end
-    return @type
-  end
+  # def type(*args)
+  #   if args.length > 0
+  #     @type = args[0]
+  #   end
+  #   return @type
+  # end
 
-  def color(*args)
-    if args.length > 0
-      @color = args[0]
-    end
-    return @color
-  end
+  # def color(*args)
+  #   if args.length > 0
+  #     @color = args[0]
+  #   end
+  #   return @color
+  # end
 
-  def price(*args)
-    if args.length > 0
-      @price = args[0]
-    end
-    return @price
-  end
+  # def price(*args)
+  #   if args.length > 0
+  #     @price = args[0]
+  #   end
+  #   return @price
+  # end
 end
 
 item1 = Items.new("guitar", "red", 1600)
 puts item1.type
-puts item1.type("piano")
+item1.type = "piano"
+puts item1.type
+#puts item1.type("piano")
 puts item1.color
-puts item1.color("black")
+item1.color = "black"
+puts item1.color
+#puts item1.color("black")
 puts item1.price
-puts item1.price(2000)
+item1.price = 2000
+#puts item1.price(2000)
+puts item1.price
