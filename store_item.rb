@@ -1,10 +1,12 @@
 items = [
 
-  instrument1 = { type: "guitar", color: "red", price: 1600 },
+  { type: "guitar", color: "red", price: 1600 },
 
-  instrument2 = { type: "piano", color: "black", price: 2000 },
+  { type: "piano", color: "black", price: 2000 },
 
-  instrument3 = { :type => "drumset", :color => "blue", :price => 2500 },
+  { :type => "drumset", :color => "blue", :price => 2500 },
+
+  { :type => "tamborine", :color => "blue", :price => 2500 },
 
 ]
 
@@ -15,13 +17,21 @@ while index < items.length
 end
 
 class Items
-  attr_reader :type, :color, :price
-  attr_writer :type, :color, :price
+  attr_accessor :type, :color, :price
 
-  def initialize(type, color, price)
-    @type = type
-    @color = color
-    @price = price
+  def initialize(input_options)
+    @type = "instrument"
+    @color = "black"
+    @price = 0
+    if input_options[:type] != nil
+      @type = input_options[:type]
+    end
+    if input_options[:color] != nil
+      @color = input_options[:color]
+    end
+    if input_options[:price] != nil
+      @price = input_options[:price]
+    end
   end
 
   # def type(*args)
