@@ -11,21 +11,3 @@ class Items
     puts "Item is a(n) #{type} that is #{color} and costs #{price}"
   end
 end
-
-class Guitars < Items
-  include Chordable
-
-  def initialize
-    super
-    @type = "guitar"
-  end
-end
-
-class Keyboards < Items
-  include Chordable
-
-  def initialize
-    super
-    @type = "keyboard"
-  end
-end
